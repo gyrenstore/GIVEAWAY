@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klaim Hadiah Spesial - Fyrenstore Official</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                        },
+                        dark: {
+                            900: '#0B0F17',
+                            800: '#111827',
+                            700: '#1F2937',
+                            600: '#374151'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0D14;
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #D4AF37 0%, #FFDF73 50%, #AA771C 100%);
+            color: #0F172A;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .gold-btn:hover:not(:disabled) {
+            box-shadow: 0 6px 28px rgba(212, 175, 55, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .gold-btn:disabled {
+            background: #374151;
+            color: #9CA3AF;
+            box-shadow: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .ticker-container {
+            animation: ticker 25s linear infinite;
+        }
+
+        .ticker-container:hover {
+            animation-play-state: paused;
+        }
+
+        /* Pulse glow for wheel hub */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); }
+        }
+
+        .wheel-center-glow {
+            animation: pulseGlow 2s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-dark-900/90 backdrop-blur-md border-b border-amber-500/20 px-4 py-3">
+        <div class="max-w-5xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-600 via-yellow-400 to-amber-700 p-0.5 flex items-center justify-center shadow-lg">
+                    <div class="w-full h-full bg-dark-900 rounded-full flex items-center justify-center">
+                        <i class="fa-solid font-bold text-amber-400 text-lg">F</i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-serif text-lg font-bold tracking-wider gold-text uppercase">FYRENSTORE</h1>
+                    <p class="text-[10px] text-gray-400 tracking-widest uppercase">Official Giveaway Program</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1.5 rounded-full">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span class="text-xs font-medium text-amber-300">Promo Aktif Hari Ini</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto w-full px-4 py-6 flex-grow">
+
+        <!-- STEP 1: FORM VERIFIKASI SEBELUM MASUK PERMAINAN -->
+        <div id="step1Container" class="space-y-6">
+            
+            <!-- Banner Utama -->
+            <div class="text-center space-y-3 glass-card p-6 md:p-8 rounded-2xl border border-amber-500/30 relative overflow-hidden">
+                <div class="absolute -top-10 -left-10 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+
+                <div class="inline-flex items-center space-x-2 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full mb-2">
+                    <i class="fa-solid fa-gift text-amber-400 text-xs"></i>
+                    <span class="text-xs text-amber-300 font-semibold uppercase tracking-wider">Spesial Pelanggan Setia</span>
+                </div>
+                <h2 class="text-2xl md:text-4xl font-serif font-extrabold text-white tracking-wide">
+                    KLAIM HADIAH SPESIAL DARI <span class="gold-text">FYRENSTORE</span>
+                </h2>
+                <p class="text-sm md:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
+                    Selesaikan 2 langkah mudah di bawah ini untuk memutar Roda Keberuntungan dan berkesempatan memenangkan <span class="text-amber-400 font-semibold">iPhone 18 Pro, Emas 1 Gram, Sepeda Listrik</span> & Hadiah Lainnya!
+                </p>
+            </div>
+
+            <!-- PANDUAN SYARAT BUKTI ULASAN VALID (LANGSUNG DITAMPILKAN DI HALAMAN UTAMA) -->
+            <div class="glass-card rounded-2xl p-5 md:p-6 border-2 border-amber-500/40 space-y-4">
+                <div class="flex items-center space-x-2 border-b border-gray-800 pb-3">
+                    <i class="fa-solid fa-clipboard-check text-amber-400 text-xl"></i>
+                    <div>
+                        <h3 class="font-serif font-bold text-base md:text-lg text-white">Panduan Syarat Bukti Ulasan Valid</h3>
+                        <p class="text-xs text-gray-400">Pahami contoh ulasan sebelum mengunggah screenshot bukti Anda</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <!-- Kartu Contoh Gagal -->
+                    <div class="bg-rose-950/40 border border-rose-500/50 rounded-xl p-4 space-y-3 relative overflow-hidden">
+                        <div class="flex items-center justify-between text-rose-400 font-bold text-xs uppercase border-b border-rose-500/20 pb-2">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-xmark text-sm"></i> Contoh TIDAK VALID</span>
+                            <span class="bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded text-[10px] font-semibold">Gagal</span>
+                        </div>
+                        
+                        <div class="bg-dark-900/90 p-3.5 rounded-lg border border-rose-900/60 space-y-2 text-xs">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-200">Pembeli: <span class="text-white">Andi</span></span>
+                                <span class="text-amber-400 font-bold">★★★★☆ <span class="text-[10px] text-gray-400">(Bintang 4)</span></span>
+                            </div>
+                            <p class="text-gray-300 italic">"Barang oke sesuai pesanan, pengiriman lumayan cepat."</p>
+                            <div class="p-2 bg-rose-900/20 rounded text-center text-rose-300 text-[11px] font-medium border border-dashed border-rose-800/80">
+                                <i class="fa-solid fa-image-slash mr-1"></i> [ Tanpa Foto / Gambar Produk ]
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 text-[11px] text-rose-300">
+                            <p class="font-semibold text-rose-400">Alasan Penolakan:</p>
+                            <ul class="space-y-1 list-disc list-inside text-rose-200/90">
+                                <li>Memberikan rating di bawah Bintang 5 (Bintang 4/3/2/1)</li>
+                                <li>Tidak menyertakan foto/gambar produk saat mengulas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Contoh Valid & Berhasil -->
+                    <div class="bg-emerald-950/40 border border-emerald-500/50 rounded-xl p-4 space-y-3 relative overflow-hidden">
+                        <div class="flex items-center justify-between text-emerald-400 font-bold text-xs uppercase border-b border-emerald-500/20 pb-2">
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-sm"></i> Contoh VALID & BERHASIL</span>
+                            <span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-semibold">Lulus</span>
+                        </div>
+                        
+                        <div class="bg-dark-900/90 p-3.5 rounded-lg border border-emerald-900/60 space-y-2 text-xs">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-gray-200">Pembeli: <span class="text-white">Budi Santoso</span></span>
+                                <span class="text-amber-400 font-bold">★★★★★ <span class="text-[10px] text-emerald-400">(Bintang 5)</span></span>
+                            </div>
+                            <p class="text-gray-300 italic">"Mantap sekali produknya ori, respon seller cepat & packing super aman!"</p>
+                            
+                            <!-- Foto Produk Ulasan Bintang 5 -->
+                            <div class="p-2.5 bg-emerald-900/30 rounded-xl flex flex-col items-center justify-center gap-2 text-emerald-300 text-[11px] font-medium border border-emerald-700/60">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-emerald-400"></i> Terlampir Foto/Gambar Produk Valid
+                                </div>
+                                <img src="https://img.lazcdn.com/g/ff/kf/S8110545a08ad4c2996503bcc891d5cbcx.png_720x720q80.png" 
+                                     alt="Bukti Ulasan Bintang 5" 
+                                     class="w-28 h-28 object-cover rounded-lg border-2 border-emerald-500/50 shadow-md transition-transform hover:scale-105"
+                                     onerror="this.src='https://placehold.co/120x120/064e3b/ffffff?text=Foto+Produk'">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 text-[11px] text-emerald-300">
+                            <p class="font-semibold text-emerald-400">Syarat yang Terpenuhi:</p>
+                            <ul class="space-y-1 list-disc list-inside text-emerald-200/90">
+                                <li>Memberikan rating Bintang 5 penuh (★★★★★)</li>
+                                <li>Melampirkan foto/gambar bukti barang terkirim</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Card Utama Verifikasi & Upload -->
+            <div class="glass-card rounded-2xl p-5 md:p-7 space-y-6 shadow-2xl">
+
+                <!-- STEP 1 - SUBSECTION A: Beri Ulasan -->
+                <div class="space-y-4 pb-6 border-b border-gray-800">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center border border-amber-500/40">1</span>
+                        <div>
+                            <h3 class="text-base font-semibold text-white">Beri Ulasan Bintang 5 + Foto Produk</h3>
+                            <p class="text-xs text-gray-400">Pastikan ulasan Anda sudah terbit di Shopee</p>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Masuk Shopee Purchase -->
+                    <a href="https://shopee.co.id/user/purchase/?type=8" target="_blank" rel="noopener noreferrer" 
+                       class="w-full flex items-center justify-between bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white font-semibold py-3.5 px-4 rounded-xl transition duration-200 shadow-lg group">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-bag-shopping text-lg"></i>
+                            <span class="text-sm md:text-base">BERI ULASAN PRODUK ADA SUDAH DATANG</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-80 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </a>
+
+                    <!-- Area Upload Screenshot -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-medium text-gray-300">
+                            Unggah Bukti Screenshot Ulasan Bintang 5 & Gambar Produk:
+                        </label>
+                        <div id="dropZone" onclick="document.getElementById('fileInput').click()" 
+                             class="border-2 border-dashed border-gray-700 hover:border-amber-500/60 rounded-xl p-6 text-center cursor-pointer transition bg-dark-900/50 relative overflow-hidden group">
+                            
+                            <input type="file" id="fileInput" class="hidden" accept="image/*" onchange="handleFileSelect(event)">
+                            
+                            <div id="uploadPlaceholder" class="space-y-2">
+                                <div class="w-12 h-12 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-cloud-arrow-up text-xl"></i>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-300 font-medium">Klik atau tarik file gambar screenshot ulasan ke sini</p>
+                                <p class="text-[11px] text-gray-500">Format JPG, PNG (Maksimal 5MB)</p>
+                            </div>
+
+                            <div id="uploadPreviewContainer" class="hidden flex flex-col items-center space-y-3">
+                                <img id="previewImg" class="max-h-48 rounded-lg border border-amber-500/30 object-contain shadow-md" alt="Preview Screenshot">
+                                <div class="flex items-center space-x-2 text-xs text-amber-400">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span id="fileNameDisplay" class="truncate max-w-xs">file_name.png</span>
+                                </div>
+                                <button type="button" onclick="resetUpload(event)" class="text-xs text-rose-400 hover:text-rose-300 underline">Ganti Gambar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Verification Simulator Box -->
+                    <div id="verificationBox" class="hidden p-3 rounded-xl border text-xs flex items-center justify-between transition-all">
+                        <div class="flex items-center space-x-2">
+                            <i id="verifIcon" class="fa-solid fa-spinner fa-spin text-amber-400"></i>
+                            <span id="verifStatusText" class="font-medium text-gray-300">Memeriksa kelayakan screenshot ulasan...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 1 - SUBSECTION B: Follow Toko -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-bold flex items-center justify-center border border-amber-500/40">2</span>
+                        <div>
+                            <h3 class="text-base font-semibold text-white">Ikuti Toko Shopee Fyrenstore</h3>
+                            <p class="text-xs text-gray-400">Wajib ikuti toko resmi kami untuk validasi partisipasi</p>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Follow Shopee -->
+                    <a href="https://shopee.co.id/fyrenstore" target="_blank" rel="noopener noreferrer" 
+                       class="w-full flex items-center justify-between bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-semibold py-3.5 px-4 rounded-xl transition duration-200 shadow-lg group">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-store text-lg"></i>
+                            <span class="text-sm md:text-base">FOLLOW IKUTI SHOPEE FYRENSTORE</span>
+                        </div>
+                        <i class="fa-solid fa-user-plus text-xs group-hover:scale-110 transition-transform"></i>
+                    </a>
+
+                    <!-- Checkbox Konfirmasi Follow -->
+                    <label class="flex items-start space-x-3 cursor-pointer pt-2">
+                        <input type="checkbox" id="followCheckbox" onchange="validateFormState()" class="mt-1 w-4 h-4 rounded text-amber-500 focus:ring-amber-400 bg-gray-800 border-gray-700">
+                        <span class="text-xs text-gray-300 leading-snug">
+                            Saya konfirmasi bahwa telah mem-follow / mengikuti akun Shopee official <span class="text-amber-400 font-semibold">Fyrenstore</span>.
+                        </span>
+                    </label>
+                </div>
+
+                <!-- Tombol Konfirmasi Lanjut Ke Spin Wheel -->
+                <div class="pt-4 border-t border-gray-800">
+                    <button id="btnProceed" onclick="proceedToSpinWheel()" disabled class="w-full py-4 rounded-xl font-bold uppercase tracking-wider text-sm md:text-base gold-btn">
+                        KONFIRMASI & MASUK KE PERMAINAN <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </button>
+                    <p id="lockReasonText" class="text-center text-xs text-amber-500/80 mt-2 font-medium">
+                        *Unggah bukti ulasan bintang 5 & centang follow toko terlebih dahulu untuk melanjutkan.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- STEP 2: PERMAINAN WHEEL OF FORTUNE (SPIN WHEEL) -->
+        <div id="step2Container" class="hidden space-y-6">
+            
+            <div class="text-center space-y-2 glass-card p-6 rounded-2xl border border-amber-500/30">
+                <span class="bg-amber-500/20 text-amber-300 text-xs px-3 py-1 rounded-full border border-amber-500/40 font-semibold">Permainan Spin Hadiah</span>
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-white">RODA KEBERUNTUNGAN FYRENSTORE</h2>
+                <p class="text-xs md:text-sm text-gray-300">Putar roda untuk mengundi kesempatan hadiah Anda hari ini!</p>
+            </div>
+
+            <!-- Canvas Wheel Container -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl">
+                
+                <!-- Status Device / Notice Lock -->
+                <div id="deviceNotice" class="hidden mb-4 bg-rose-500/10 border border-rose-500/30 text-rose-300 px-4 py-2 rounded-xl text-xs text-center font-medium w-full max-w-md">
+                    <i class="fa-solid fa-lock mr-1"></i> Perangkat / HP Anda sudah menggunakan jatah 1x spin hari ini. Status: Terkunci.
+                </div>
+
+                <!-- Container Wheel Canvas -->
+                <div class="relative my-4 w-full max-w-[340px] sm:max-w-[380px] aspect-square flex items-center justify-center">
+                    
+                    <!-- Pointer Arrow Pin -->
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-30 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                        <div class="w-8 h-10 bg-gradient-to-b from-amber-300 to-amber-600 clip-path-pointer flex items-center justify-center">
+                            <i class="fa-solid fa-caret-down text-dark-900 text-2xl -mt-2"></i>
+                        </div>
+                    </div>
+
+                    <!-- Outer Golden Rim -->
+                    <div class="w-full h-full rounded-full p-3 bg-gradient-to-tr from-amber-600 via-yellow-200 to-amber-700 shadow-[0_0_50px_rgba(212,175,55,0.3)] relative">
+                        <div class="w-full h-full rounded-full border-4 border-dark-900 overflow-hidden relative shadow-inner">
+                            <canvas id="wheelCanvas" width="500" height="500" class="w-full h-full transition-transform ease-out"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Center Cap Button -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-to-b from-amber-300 via-amber-500 to-amber-700 p-1 z-20 wheel-center-glow cursor-pointer" onclick="triggerSpin()">
+                        <div class="w-full h-full bg-dark-900 rounded-full flex flex-col items-center justify-center text-center p-1 border border-amber-300/40">
+                            <span class="text-[11px] font-black tracking-wider text-amber-300 leading-none">SPIN</span>
+                            <span class="text-[8px] text-gray-400 mt-0.5">KLIK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Action Button -->
+                <button id="btnSpinMain" onclick="triggerSpin()" class="w-full max-w-sm mt-4 py-4 rounded-xl font-extrabold uppercase tracking-widest text-base gold-btn flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrows-spin text-lg"></i> PUTAR RODA SEKARANG
+                </button>
+
+            </div>
+        </div>
+
+        <!-- DAFTAR PEMENANG TERAKHIR (REAL-TIME LIVE WINNER TICKER) -->
+        <section class="mt-8 glass-card rounded-2xl p-5 border border-amber-500/20">
+            <div class="flex items-center justify-between mb-4 border-b border-gray-800 pb-3">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-trophy text-amber-400 text-sm"></i>
+                    <h3 class="font-serif font-bold text-sm md:text-base text-white">Daftar Pemenang Terbaru</h3>
+                </div>
+                <span class="text-[11px] text-gray-400 bg-gray-800 px-2.5 py-1 rounded-full border border-gray-700">
+                    <i class="fa-solid fa-circle text-[8px] text-emerald-400 mr-1 animate-pulse"></i> Live Updated
+                </span>
+            </div>
+
+            <!-- Ticker Wrapper -->
+            <div class="h-44 overflow-hidden relative">
+                <div class="ticker-container space-y-2.5" id="winnerListContainer">
+                    <!-- Dinamis via JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-10 border-t border-gray-800 py-6 text-center text-xs text-gray-500 space-y-2">
+        <p>© 2026 Fyrenstore Official. All Rights Reserved.</p>
+        <p class="max-w-md mx-auto text-[11px] text-gray-600">
+            Program penukaran hadiah ini diselenggarakan secara independen oleh Fyrenstore bagi pelanggan dengan syarat dan ketentuan berlaku.
+        </p>
+    </footer>
+
+    <!-- MODAL HASIL SPIN (ZONK RESULT) -->
+    <div id="modalResult" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-card max-w-md w-full rounded-2xl p-6 border border-amber-500/40 text-center space-y-5 transform scale-95 transition-transform duration-300" id="modalResultBox">
+            <div class="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center mx-auto text-3xl">
+                <i class="fa-solid fa-face-frown-open"></i>
+            </div>
+            
+            <div class="space-y-2">
+                <h3 class="font-serif text-2xl font-extrabold text-white">HASIL SPINNER</h3>
+                <div class="p-3 bg-amber-500/10 rounded-xl border border-amber-500/20">
+                    <p class="text-amber-300 font-bold text-lg">Zonk! Coba Lagi Ya!</p>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed pt-2">
+                    Sayang sekali, keberuntungan belum berpihak pada Anda kali ini. Terima kasih banyak sudah berpartisipasi dan memberikan ulasan bintang 5 untuk Fyrenstore!
+                </p>
+            </div>
+
+            <div class="p-3 bg-dark-900 rounded-xl border border-gray-800 text-[11px] text-gray-400 space-y-1">
+                <p><i class="fa-solid fa-circle-info text-amber-400"></i> Status Perangkat: <span class="text-rose-400 font-semibold">Terkunci (1 Spin Limit)</span></p>
+                <p>Halaman ini telah mengunci HP Anda agar tidak dapat mengulang spin.</p>
+            </div>
+
+            <button onclick="closeModalResult()" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-dark-900 font-bold rounded-xl text-sm transition">
+                TUTUP & SELESAI
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Data & Variable Configuration
+        const prizes = [
+            { label: 'iPhone 18 Pro', color: '#1E293B', textColor: '#F59E0B' },
+            { label: 'Emas 1 Gram', color: '#B45309', textColor: '#FFFFFF' },
+            { label: 'Zonk / Coba Lagi', color: '#0F172A', textColor: '#94A3B8' },
+            { label: 'Sepeda Listrik', color: '#334155', textColor: '#F59E0B' },
+            { label: 'Garskin Custom', color: '#D97706', textColor: '#FFFFFF' },
+            { label: 'Zonk / Coba Lagi', color: '#0F172A', textColor: '#94A3B8' }
+        ];
+
+        let hasUploadedValidScreenshot = false;
+        let isSpinning = false;
+
+        const dummyWinners = [
+            { name: "Andri P. (Jakarta)", prize: "Garskin Custom", time: "2 menit lalu" },
+            { name: "Rina Marlina (Surabaya)", prize: "Emas 1 Gram", time: "5 menit lalu" },
+            { name: "Dimas S. (Bandung)", prize: "Garskin Custom", time: "12 menit lalu" },
+            { name: "Budi Santoso (Medan)", prize: "Garskin Custom", time: "18 menit lalu" },
+            { name: "Siti Rahma (Semarang)", prize: "Emas 1 Gram", time: "25 menit lalu" },
+            { name: "Hendra K. (Makassar)", prize: "Garskin Custom", time: "34 menit lalu" },
+            { name: "Fajar W. (Yogyakarta)", prize: "Garskin Custom", time: "41 menit lalu" }
+        ];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderWinnerTicker();
+            drawWheel();
+            checkDeviceSpinLock();
+        });
+
+        // 1. DAFTAR PEMENANG TICKER
+        function renderWinnerTicker() {
+            const container = document.getElementById('winnerListContainer');
+            const list = [...dummyWinners, ...dummyWinners];
+            
+            container.innerHTML = list.map(w => `
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-dark-900/80 border border-gray-800 hover:border-amber-500/30 transition text-xs">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-7 h-7 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-[10px]">
+                            ${w.name.charAt(0)}
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-200">${w.name}</p>
+                            <p class="text-[10px] text-gray-400">${w.time}</p>
+                        </div>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-md bg-amber-500/10 border border-amber-500/30 text-amber-300 font-medium text-[11px]">
+                        ${w.prize}
+                    </span>
+                </div>
+            `).join('');
+        }
+
+        // 2. FILE UPLOAD & SIMULATED OCR VERIFICATION
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('uploadPlaceholder').classList.add('hidden');
+                document.getElementById('uploadPreviewContainer').classList.remove('hidden');
+                document.getElementById('previewImg').src = e.target.result;
+                document.getElementById('fileNameDisplay').textContent = file.name;
+
+                runVerificationSimulation();
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function resetUpload(e) {
+            e.stopPropagation();
+            document.getElementById('fileInput').value = '';
+            document.getElementById('uploadPlaceholder').classList.remove('hidden');
+            document.getElementById('uploadPreviewContainer').classList.add('hidden');
+            document.getElementById('verificationBox').classList.add('hidden');
+            hasUploadedValidScreenshot = false;
+            validateFormState();
+        }
+
+        function runVerificationSimulation() {
+            const verifBox = document.getElementById('verificationBox');
+            const icon = document.getElementById('verifIcon');
+            const text = document.getElementById('verifStatusText');
+
+            verifBox.classList.remove('hidden');
+            verifBox.className = "p-3 rounded-xl border text-xs flex items-center justify-between transition-all bg-amber-500/10 border-amber-500/30 text-amber-300";
+            icon.className = "fa-solid fa-spinner fa-spin text-amber-400";
+            text.textContent = "Sistem AI sedang memverifikasi ulasan bintang 5 & foto produk...";
+
+            setTimeout(() => {
+                verifBox.className = "p-3 rounded-xl border text-xs flex items-center justify-between transition-all bg-emerald-500/10 border-emerald-500/30 text-emerald-300";
+                icon.className = "fa-solid fa-circle-check text-emerald-400";
+                text.textContent = "VERIFIKASI SUKSES: Terdeteksi Ulasan Bintang 5 + Foto Produk Valid!";
+                
+                hasUploadedValidScreenshot = true;
+                validateFormState();
+            }, 1400);
+        }
+
+        function validateFormState() {
+            const followChecked = document.getElementById('followCheckbox').checked;
+            const btnProceed = document.getElementById('btnProceed');
+            const lockReason = document.getElementById('lockReasonText');
+
+            if (hasUploadedValidScreenshot && followChecked) {
+                btnProceed.disabled = false;
+                lockReason.textContent = "Syarat terpenuhi! Klik untuk masuk ke permainan spin.";
+                lockReason.className = "text-center text-xs text-emerald-400 mt-2 font-medium";
+            } else {
+                btnProceed.disabled = true;
+                lockReason.textContent = "*Unggah bukti ulasan bintang 5 & centang follow toko terlebih dahulu untuk melanjutkan.";
+                lockReason.className = "text-center text-xs text-amber-500/80 mt-2 font-medium";
+            }
+        }
+
+        function proceedToSpinWheel() {
+            document.getElementById('step1Container').classList.add('hidden');
+            document.getElementById('step2Container').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 3. CANVAS SPIN WHEEL RENDERING
+        function drawWheel() {
+            const canvas = document.getElementById('wheelCanvas');
+            if (!canvas.getContext) return;
+            const ctx = canvas.getContext('2d');
+            const numPrizes = prizes.length;
+            const arc = (2 * Math.PI) / numPrizes;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = canvas.width / 2 - 10;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < numPrizes; i++) {
+                const angle = i * arc;
+                ctx.beginPath();
+                ctx.fillStyle = prizes[i].color;
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, angle, angle + arc);
+                ctx.lineTo(centerX, centerY);
+                ctx.fill();
+
+                ctx.strokeStyle = 'rgba(212, 175, 55, 0.3)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                ctx.save();
+                ctx.fillStyle = prizes[i].textColor;
+                ctx.font = 'bold 16px Inter, sans-serif';
+                ctx.translate(
+                    centerX + Math.cos(angle + arc / 2) * (radius - 80),
+                    centerY + Math.sin(angle + arc / 2) * (radius - 80)
+                );
+                ctx.rotate(angle + arc / 2 + Math.PI / 2);
+                ctx.fillText(prizes[i].label, -ctx.measureText(prizes[i].label).width / 2, 0);
+                ctx.restore();
+            }
+        }
+
+        // 4. DEVICE LOCK & PERSISTENCE (1 DEVICE = 1 SPIN)
+        function checkDeviceSpinLock() {
+            const spinLocked = localStorage.getItem('fyrenstore_spin_locked') || sessionStorage.getItem('fyrenstore_spin_locked');
+            if (spinLocked === 'true') {
+                disableSpinButtons();
+            }
+        }
+
+        function disableSpinButtons() {
+            const btnMain = document.getElementById('btnSpinMain');
+            const notice = document.getElementById('deviceNotice');
+            
+            if (btnMain) {
+                btnMain.disabled = true;
+                btnMain.innerHTML = `<i class="fa-solid fa-lock mr-2"></i> PERANGKAT TERKUNCI (SUDAH SPIN)`;
+            }
+            if (notice) {
+                notice.classList.remove('hidden');
+            }
+        }
+
+        function playTickSound() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(300, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.05);
+                gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.05);
+            } catch (e) {
+                // Audio not supported or blocked
+            }
+        }
+
+        // 5. SPIN WHEEL ALGORITHM (99% ZONK PROBABILITY)
+        function triggerSpin() {
+            if (isSpinning) return;
+
+            if (localStorage.getItem('fyrenstore_spin_locked') === 'true') {
+                alert('Sistem mendeteksi bahwa HP/Perangkat ini sudah pernah memutar roda keberuntungan hari ini.');
+                return;
+            }
+
+            isSpinning = true;
+            document.getElementById('btnSpinMain').disabled = true;
+
+            // Target Index Zonk (Index 2 atau Index 5)
+            const zonkIndices = [2, 5];
+            const targetIndex = zonkIndices[Math.floor(Math.random() * zonkIndices.length)];
+
+            const canvas = document.getElementById('wheelCanvas');
+            const numPrizes = prizes.length;
+            const degreesPerSegment = 360 / numPrizes;
+
+            const targetSegmentAngle = (numPrizes - targetIndex) * degreesPerSegment - (degreesPerSegment / 2) - 90;
+            const fullRotations = 360 * 6;
+            const finalRotation = fullRotations + targetSegmentAngle + (Math.random() * 8 - 4);
+
+            canvas.style.transition = 'transform 6s cubic-bezier(0.15, 0.9, 0.15, 1)';
+            canvas.style.transform = `rotate(${finalRotation}deg)`;
+
+            let tickCount = 0;
+            const tickInterval = setInterval(() => {
+                playTickSound();
+                tickCount++;
+                if (tickCount > 25) clearInterval(tickInterval);
+            }, 200);
+
+            setTimeout(() => {
+                isSpinning = false;
+                
+                // Save device lock state
+                localStorage.setItem('fyrenstore_spin_locked', 'true');
+                sessionStorage.setItem('fyrenstore_spin_locked', 'true');
+                
+                disableSpinButtons();
+                openModalResult();
+            }, 6200);
+        }
+
+        function openModalResult() {
+            const m = document.getElementById('modalResult');
+            const box = document.getElementById('modalResultBox');
+            m.classList.remove('opacity-0', 'pointer-events-none');
+            box.classList.remove('scale-95');
+            box.classList.add('scale-100');
+        }
+
+        function closeModalResult() {
+            const m = document.getElementById('modalResult');
+            const box = document.getElementById('modalResultBox');
+            m.classList.add('opacity-0', 'pointer-events-none');
+            box.classList.remove('scale-100');
+            box.classList.add('scale-95');
+        }
+    </script>
+</body>
+</html>
